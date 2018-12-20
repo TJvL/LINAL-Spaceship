@@ -10,4 +10,5 @@ sf::Drawable *Spaceship::update(const std::map<sf::Keyboard::Key, bool> &keyboar
       // TODO: Check what keys are pressed or released and update accordingly.
     }
   }
+  return nullptr;
 }
