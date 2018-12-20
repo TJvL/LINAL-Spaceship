@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="linal_spaceship"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\SFML-2.5.1\;CMake Files\lib\SFML-2.5.1\lib\;CMake Files\lib\SFML-2.5.1\lib\cmake\;CMake Files\lib\SFML-2.5.1\lib\cmake\SFML\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="linal_spaceship">
+				<Option output="/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/linal_spaceship" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/thomas/CLionProjects/linal-spaceship/lib/SFML-2.5.1/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 linal_spaceship"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="linal_spaceship/fast">
+				<Option output="/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/linal_spaceship" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/thomas/CLionProjects/linal-spaceship/lib/SFML-2.5.1/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 linal_spaceship/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/CLionProjects/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/Application.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/game/Bullet.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/game/Game.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/game/GameObjectCreation.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/game/ShootingTarget.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/game/Spaceship.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/game/WireModel.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/math/Mesh.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/source/math/Transform.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/lib/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\lib\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/lib/SFML-2.5.1/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\lib\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/lib/SFML-2.5.1/lib/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\lib\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/lib/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\lib\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/thomas/CLionProjects/linal-spaceship/lib/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\lib\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
