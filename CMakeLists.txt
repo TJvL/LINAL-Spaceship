@@ -3,13 +3,13 @@ project(linal_spaceship)
 
 set(CMAKE_CXX_STANDARD 17)
 
-if(MSVC)
-set(SFML_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/windows/SFML-2.5.1/lib/cmake/SFML")
+if (MSVC)
+    set(SFML_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/windows/SFML-2.5.1/lib/cmake/SFML")
+    set(SFML_STATIC_LIBRARIES true)
+else ()
+    set(SFML_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/linux/SFML-2.5.1/lib/cmake/SFML")
+endif ()
 
-set(SFML_STATIC_LIBRARIES true)
-else()
-set(SFML_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/linux/SFML-2.5.1/lib/cmake/SFML")
-endif()
 find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
 
 add_executable(linal_spaceship
