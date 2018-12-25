@@ -13,9 +13,59 @@
 
 Updatable *createSpaceship() {
   std::vector<Vector3> points{
+      // Body.
+      Vector3{5, 0, 5},
+      Vector3{5, 0, -5},
+      Vector3{-5, 0, -5},
+      Vector3{-5, 0, 5},
+      Vector3{5, 10, 5},
+      Vector3{5, 10, -5},
+      Vector3{-5, 10, -5},
+      Vector3{-5, 10, 5},
+      // Tail.
+      Vector3{0, 5, 10},
+      // Nose.
+      Vector3{0, 0, -15},
+      // Right wing.
+      Vector3{10, 0, 0},
+      // Left wing.
+      Vector3{-10, 0, 0}
   };
 
   std::vector<std::pair<size_t, size_t>> lines{
+      // Body.
+      std::make_pair<size_t, size_t>(0, 1),
+      std::make_pair<size_t, size_t>(1, 2),
+      std::make_pair<size_t, size_t>(2, 3),
+      std::make_pair<size_t, size_t>(3, 0),
+      std::make_pair<size_t, size_t>(4, 5),
+      std::make_pair<size_t, size_t>(5, 6),
+      std::make_pair<size_t, size_t>(6, 7),
+      std::make_pair<size_t, size_t>(7, 4),
+      std::make_pair<size_t, size_t>(0, 4),
+      std::make_pair<size_t, size_t>(1, 5),
+      std::make_pair<size_t, size_t>(2, 6),
+      std::make_pair<size_t, size_t>(3, 7),
+      // Tail.
+      std::make_pair<size_t, size_t>(2, 8),
+      std::make_pair<size_t, size_t>(3, 8),
+      std::make_pair<size_t, size_t>(5, 8),
+      std::make_pair<size_t, size_t>(6, 8),
+      // Nose.
+      std::make_pair<size_t, size_t>(0, 9),
+      std::make_pair<size_t, size_t>(3, 9),
+      std::make_pair<size_t, size_t>(4, 9),
+      std::make_pair<size_t, size_t>(7, 9),
+      // Right wing.
+      std::make_pair<size_t, size_t>(0, 10),
+      std::make_pair<size_t, size_t>(1, 10),
+      std::make_pair<size_t, size_t>(5, 10),
+      std::make_pair<size_t, size_t>(6, 10),
+      // Left Wing.
+      std::make_pair<size_t, size_t>(3, 11),
+      std::make_pair<size_t, size_t>(4, 11),
+      std::make_pair<size_t, size_t>(7, 11),
+      std::make_pair<size_t, size_t>(8, 11),
   };
 
   Mesh mesh{points, lines};
