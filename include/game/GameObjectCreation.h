@@ -5,6 +5,7 @@
 #ifndef LINAL_SPACESHIP_MODELFACTORY_H
 #define LINAL_SPACESHIP_MODELFACTORY_H
 
+#include <memory>
 #include "Updatable.h"
 
 Updatable *createSpaceship();

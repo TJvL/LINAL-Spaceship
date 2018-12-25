@@ -11,20 +11,20 @@
 				<Option working_dir="/home/thomas/Repositories/linal-spaceship/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/home/thomas/Repositories/linal-spaceship/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="linal_spaceship">
@@ -45,10 +45,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 linal_spaceship"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 linal_spaceship"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="linal_spaceship/fast">
@@ -69,20 +69,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 linal_spaceship/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 linal_spaceship/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/thomas/Repositories/linal-spaceship/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thomas/Repositories/linal-spaceship/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -111,6 +111,12 @@
 			<Option target="linal_spaceship"/>
 		</Unit>
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Transform.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Vector3.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
+		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Vector4.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/CMakeLists.txt">

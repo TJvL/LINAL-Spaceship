@@ -21,6 +21,8 @@ add_executable(linal_spaceship
         source/game/ShootingTarget.cpp
         source/game/Bullet.cpp
         source/game/GameObjectCreation.cpp
-        source/math/Transform.cpp)
+        source/math/Transform.cpp
+        source/math/Vector3.cpp
+        source/math/Vector4.cpp)
 
 target_link_libraries(linal_spaceship sfml-graphics)

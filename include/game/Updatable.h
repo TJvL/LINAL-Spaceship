@@ -13,7 +13,7 @@ class Updatable {
  public:
   virtual ~Updatable() = default;
 
-  virtual sf::Drawable *update(const std::map<sf::Keyboard::Key, bool> &keyboard) = 0;
+  virtual sf::Drawable &update(const std::map<sf::Keyboard::Key, bool> &keyboard) = 0;
  protected:
   Updatable() = default;
 };

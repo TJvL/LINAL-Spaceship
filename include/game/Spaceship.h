@@ -6,10 +6,16 @@
 #define LINAL_SPACESHIP_SPACESHIP_H
 
 #include "Updatable.h"
+#include "WireModel.h"
 
 class Spaceship : public Updatable {
  public:
-  sf::Drawable *update(const std::map<sf::Keyboard::Key, bool> &keyboard) override;
+  Spaceship(WireModel wireModel);
+
+  sf::Drawable &update(const std::map<sf::Keyboard::Key, bool> &keyboard) override;
+
+ private:
+  WireModel wireModel_;
 };
 
 #endif //LINAL_SPACESHIP_SPACESHIP_H

@@ -2,16 +2,109 @@
 // Created by thomas on 20-12-18.
 //
 
+#include <vector>
+#include "../../include/math/Vector3.h"
+#include "../../include/math/Mesh.h"
+#include "../../include/game/WireModel.h"
+#include "../../include/game/Spaceship.h"
+#include "../../include/game/ShootingTarget.h"
+#include "../../include/game/Bullet.h"
 #include "../../include/game/GameObjectCreation.h"
 
 Updatable *createSpaceship() {
-  return nullptr;
+  std::vector<Vector3> points{
+  };
+
+  std::vector<std::pair<size_t, size_t>> lines{
+  };
+
+  Mesh mesh{points, lines};
+  WireModel model{mesh};
+
+  return new Spaceship(model);
 }
 
 Updatable *createShootingTarget() {
-  return nullptr;
+  std::vector<Vector3> points{
+      // Front points.
+      Vector3{10, 10, 0},
+      Vector3{7.5, 7.5, 0},
+      Vector3{10, 0, 0},
+      Vector3{7.5, -7.5f, 0},
+      Vector3{0, -10, 0},
+      Vector3{-7.5f, -7.5f, 0},
+      Vector3{-10, 0, 0},
+      Vector3{-7.5f, 7.5f, 0},
+      // Back points.
+      Vector3{10, 10, 2.5},
+      Vector3{7.5, 7.5, 2.5},
+      Vector3{10, 0, 2.5},
+      Vector3{7.5, -7.5f, 2.5},
+      Vector3{0, -10, 2.5},
+      Vector3{-7.5f, -7.5f, 2.5},
+      Vector3{-10, 0, 2.5},
+      Vector3{-7.5f, 7.5f, 2.5},
+  };
+
+  std::vector<std::pair<size_t, size_t>> lines{
+      // Front edges.
+      std::make_pair<size_t, size_t>(0, 1),
+      std::make_pair<size_t, size_t>(1, 2),
+      std::make_pair<size_t, size_t>(2, 3),
+      std::make_pair<size_t, size_t>(3, 4),
+      std::make_pair<size_t, size_t>(4, 5),
+      std::make_pair<size_t, size_t>(5, 6),
+      std::make_pair<size_t, size_t>(6, 7),
+      std::make_pair<size_t, size_t>(7, 0),
+      // Back edges.
+      std::make_pair<size_t, size_t>(8, 9),
+      std::make_pair<size_t, size_t>(9, 10),
+      std::make_pair<size_t, size_t>(10, 11),
+      std::make_pair<size_t, size_t>(11, 12),
+      std::make_pair<size_t, size_t>(12, 13),
+      std::make_pair<size_t, size_t>(13, 14),
+      std::make_pair<size_t, size_t>(14, 15),
+      std::make_pair<size_t, size_t>(15, 8),
+      // Connecting edges.
+      std::make_pair<size_t, size_t>(0, 8),
+      std::make_pair<size_t, size_t>(1, 9),
+      std::make_pair<size_t, size_t>(2, 10),
+      std::make_pair<size_t, size_t>(3, 11),
+      std::make_pair<size_t, size_t>(4, 12),
+      std::make_pair<size_t, size_t>(5, 13),
+      std::make_pair<size_t, size_t>(6, 14),
+      std::make_pair<size_t, size_t>(7, 15)
+  };
+
+  Mesh mesh{points, lines};
+  WireModel model{mesh};
+
+  return new ShootingTarget(model);
 }
 
 Updatable *createBullet() {
-  return nullptr;
+  std::vector<Vector3> points{
+      Vector3{0, 5, 0},
+      Vector3{2, 0, 0},
+      Vector3{-2, 0, 0},
+      Vector3{0, 0, 2},
+      Vector3{0, 0, -2},
+      Vector3{0, -3, 0}
+  };
+
+  std::vector<std::pair<size_t, size_t>> lines{
+      std::make_pair<size_t, size_t>(0, 1),
+      std::make_pair<size_t, size_t>(0, 2),
+      std::make_pair<size_t, size_t>(0, 3),
+      std::make_pair<size_t, size_t>(0, 4),
+      std::make_pair<size_t, size_t>(1, 5),
+      std::make_pair<size_t, size_t>(2, 5),
+      std::make_pair<size_t, size_t>(3, 5),
+      std::make_pair<size_t, size_t>(4, 5)
+  };
+
+  Mesh mesh{points, lines};
+  WireModel model{mesh};
+
+  return new Bullet(model);
 }
