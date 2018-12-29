@@ -8,9 +8,9 @@
 #include "../../include/game/Game.h"
 
 Game::Game()
-    : currentRenderState_(sf::RenderStates::Default) {
-  updatables_.push_back(createSpaceship());
-  updatables_.push_back(createShootingTarget());
+	: currentRenderState_(sf::RenderStates::Default), camera_{} {
+  updatables_.push_back(createSpaceship(camera_));
+  //updatables_.push_back(createShootingTarget(camera_));
 }
 
 Game::~Game() {

@@ -14,6 +14,7 @@
 #include "Spaceship.h"
 #include "ShootingTarget.h"
 #include "Bullet.h"
+#include "Camera.h"
 
 class Game {
  public:
@@ -24,6 +25,7 @@ class Game {
  private:
   sf::RenderStates currentRenderState_;
   std::vector<Updatable*> updatables_;
+  Camera camera_;
 };
 
 #endif //LINAL_SPACESHIP_GAME_H

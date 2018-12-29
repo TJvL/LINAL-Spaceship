@@ -14,3 +14,11 @@ size_t Mesh::numberOfPoints() const {
 size_t Mesh::numberOfEdges() const {
   return edges_.size();
 }
+
+std::vector<Vector3> const& Mesh::getPoints() const {
+	return points_;
+}
+
+std::vector<std::pair<size_t, size_t>> const& Mesh::getEdges() const {
+	return edges_;
+}

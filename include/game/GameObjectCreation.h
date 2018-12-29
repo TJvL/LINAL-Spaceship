@@ -7,9 +7,10 @@
 
 #include <memory>
 #include "Updatable.h"
+#include "Camera.h"
 
-Updatable *createSpaceship();
-Updatable *createShootingTarget();
-Updatable *createBullet();
+Updatable *createSpaceship(Camera const& camera);
+Updatable *createShootingTarget(Camera const& camera);
+Updatable *createBullet(Camera const& camera);
 
 #endif //LINAL_SPACESHIP_MODELFACTORY_H

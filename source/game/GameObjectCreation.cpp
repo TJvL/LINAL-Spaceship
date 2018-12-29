@@ -3,7 +3,7 @@
 //
 
 #include <vector>
-#include "../../include/math/Vector3.h"
+#include "../../include/math/Matrix.h"
 #include "../../include/math/Mesh.h"
 #include "../../include/game/WireModel.h"
 #include "../../include/game/Spaceship.h"
@@ -11,25 +11,25 @@
 #include "../../include/game/Bullet.h"
 #include "../../include/game/GameObjectCreation.h"
 
-Updatable *createSpaceship() {
+Updatable *createSpaceship(Camera const& camera) {
   std::vector<Vector3> points{
       // Body.
-      Vector3{5, 0, 5},
-      Vector3{5, 0, -5},
-      Vector3{-5, 0, -5},
-      Vector3{-5, 0, 5},
-      Vector3{5, 10, 5},
-      Vector3{5, 10, -5},
-      Vector3{-5, 10, -5},
-      Vector3{-5, 10, 5},
+      Vector3{5., 0., 5.},
+      Vector3{5., 0., -5.},
+      Vector3{-5., 0., -5.},
+      Vector3{-5., 0., 5.},
+      Vector3{5., 10., 5.},
+      Vector3{5., 10., -5.},
+      Vector3{-5., 10., -5.},
+      Vector3{-5., 10., 5.},
       // Tail.
-      Vector3{0, 5, 10},
+      Vector3{0., 5., 10.},
       // Nose.
-      Vector3{0, 0, -15},
+      Vector3{0., 0., -15.},
       // Right wing.
-      Vector3{10, 0, 0},
+      Vector3{10., 0., 0.},
       // Left wing.
-      Vector3{-10, 0, 0}
+      Vector3{-10., 0., 0.}
   };
 
   std::vector<std::pair<size_t, size_t>> lines{
@@ -69,30 +69,30 @@ Updatable *createSpaceship() {
   };
 
   Mesh mesh{points, lines};
-  WireModel model{mesh};
+  WireModel model{mesh, camera};
 
   return new Spaceship(model);
 }
 
-Updatable *createShootingTarget() {
+Updatable *createShootingTarget(Camera const& camera) {
   std::vector<Vector3> points{
       // Front points.
-      Vector3{10, 10, 0},
-      Vector3{7.5, 7.5, 0},
-      Vector3{10, 0, 0},
-      Vector3{7.5, -7.5f, 0},
-      Vector3{0, -10, 0},
-      Vector3{-7.5f, -7.5f, 0},
-      Vector3{-10, 0, 0},
-      Vector3{-7.5f, 7.5f, 0},
+      Vector3{10., 10., 0.},
+      Vector3{7.5, 7.5, 0.},
+      Vector3{10., 0., 0.},
+      Vector3{7.5, -7.5f, 0.},
+      Vector3{0., -10., 0.},
+      Vector3{-7.5f, -7.5f, 0.},
+      Vector3{-10., 0., 0.},
+      Vector3{-7.5f, 7.5f, 0.},
       // Back points.
-      Vector3{10, 10, 2.5},
+      Vector3{10., 10., 2.5},
       Vector3{7.5, 7.5, 2.5},
-      Vector3{10, 0, 2.5},
+      Vector3{10., 0., 2.5},
       Vector3{7.5, -7.5f, 2.5},
-      Vector3{0, -10, 2.5},
+      Vector3{0., -10., 2.5},
       Vector3{-7.5f, -7.5f, 2.5},
-      Vector3{-10, 0, 2.5},
+      Vector3{-10., 0., 2.5},
       Vector3{-7.5f, 7.5f, 2.5},
   };
 
@@ -127,19 +127,19 @@ Updatable *createShootingTarget() {
   };
 
   Mesh mesh{points, lines};
-  WireModel model{mesh};
+  WireModel model{mesh, camera };
 
   return new ShootingTarget(model);
 }
 
-Updatable *createBullet() {
+Updatable *createBullet(Camera const& camera) {
   std::vector<Vector3> points{
-      Vector3{0, 5, 0},
-      Vector3{2, 0, 0},
-      Vector3{-2, 0, 0},
-      Vector3{0, 0, 2},
-      Vector3{0, 0, -2},
-      Vector3{0, -3, 0}
+      Vector3{0., 5., 0.},
+      Vector3{2., 0., 0.},
+      Vector3{-2., 0., 0.},
+      Vector3{0., 0., 2.},
+      Vector3{0., 0., -2.},
+      Vector3{0., -3., 0.}
   };
 
   std::vector<std::pair<size_t, size_t>> lines{
@@ -154,7 +154,7 @@ Updatable *createBullet() {
   };
 
   Mesh mesh{points, lines};
-  WireModel model{mesh};
+  WireModel model{mesh, camera };
 
   return new Bullet(model);
 }
