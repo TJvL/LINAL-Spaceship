@@ -92,6 +92,9 @@
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/game/Bullet.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>
+		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/game/Camera.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/game/Game.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>

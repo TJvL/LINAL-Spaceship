@@ -2,6 +2,7 @@
 // Created by thomas on 19-12-18.
 //
 
+#include <vector>
 #include "../../include/game/WireModel.h"
 #include "../../include/math/Transform.h"
 
@@ -22,7 +23,7 @@ void WireModel::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
 	sf::Uint8 r{}, g{}, b{};
 
-	auto points{ mesh_.getPoints() };
+	std::vector<Vector3> points(mesh_.getPoints());
 
 	auto rotationMatrix = Transform::rotationMatrix(mesh_.heading, mesh_.side, mesh_.top);
 	auto scalingMatrix = Transform::scalingMatrix(mesh_.scaling);

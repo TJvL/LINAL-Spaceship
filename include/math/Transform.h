@@ -8,7 +8,7 @@
 #include "Matrix.h"
 #include "../game/Camera.h"
 
-class Transform: public Matrix4 {
+class Transform {
 public:
 	static Matrix4 translationMatrix(Vector3 const& direction) {
 	double x = direction.data[0];
