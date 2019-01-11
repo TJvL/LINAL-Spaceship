@@ -36,7 +36,7 @@ void Game::runLoop(sf::RenderWindow &window, std::function<void(LoopControl &, d
     } else {
       window.clear(sf::Color::White);
       for (auto &updatable : updatables_) {
-        window.draw(updatable->update(control.keyboard), currentRenderState_);
+        window.draw(updatable->update(deltaTime, control.keyboard), currentRenderState_);
       }
       window.display();
     }

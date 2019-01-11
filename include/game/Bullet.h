@@ -12,7 +12,7 @@ class Bullet : public Updatable {
  public:
   Bullet(WireModel wireModel);
 
-  sf::Drawable &update(const std::map<sf::Keyboard::Key, bool> &keyboard) override;
+  sf::Drawable &update(const deltaTime &deltaTime, const std::map<sf::Keyboard::Key, bool> &keyboard) override;
 
  private:
   WireModel wireModel_;

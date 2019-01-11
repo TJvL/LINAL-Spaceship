@@ -7,6 +7,6 @@
 ShootingTarget::ShootingTarget(WireModel wireModel)
     : wireModel_(wireModel) {}
 
-sf::Drawable &ShootingTarget::update(const std::map<sf::Keyboard::Key, bool> &keyboard) {
+sf::Drawable &ShootingTarget::update(const deltaTime &deltaTime, const std::map<sf::Keyboard::Key, bool> &keyboard) {
   return wireModel_;
 }

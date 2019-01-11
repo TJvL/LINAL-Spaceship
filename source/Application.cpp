@@ -3,6 +3,7 @@
 //
 
 #include <SFML/Window/Event.hpp>
+#include <iostream>
 #include "../include/game/LoopControl.h"
 #include "../include/game/Time.h"
 #include "../include/Application.h"
@@ -11,7 +12,9 @@ const unsigned int screenWidth = 800;
 const unsigned int screenHeight = 600;
 
 Application::Application()
-    : window_(sf::RenderWindow{sf::VideoMode{screenWidth, screenHeight}, "Spaceship", sf::Style::Close}) {}
+    : window_(sf::RenderWindow{sf::VideoMode{screenWidth, screenHeight}, "Spaceship", sf::Style::Close}) {
+  window_.setKeyRepeatEnabled(false);
+}
 
 void Application::run() {
   game_.runLoop(window_, [&](LoopControl &control, deltaTime &deltaTime) {

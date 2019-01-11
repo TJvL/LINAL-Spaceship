@@ -7,6 +7,6 @@
 Bullet::Bullet(WireModel wireModel)
     : wireModel_(wireModel) {}
 
-sf::Drawable &Bullet::update(const std::map<sf::Keyboard::Key, bool> &keyboard) {
+sf::Drawable &Bullet::update(const deltaTime &deltaTime, const std::map<sf::Keyboard::Key, bool> &keyboard) {
   return wireModel_;
 }

@@ -12,9 +12,19 @@ class Spaceship : public Updatable {
  public:
   Spaceship(WireModel wireModel);
 
-  sf::Drawable &update(const std::map<sf::Keyboard::Key, bool> &keyboard) override;
+  sf::Drawable &update(const deltaTime &deltaTime, const std::map<sf::Keyboard::Key, bool> &keyboard) override;
 
  private:
+  void setMovement(const sf::Keyboard::Key &key, const bool isPressed);
+
+  bool movingForwards_;
+  bool movingBackwards_;
+  bool pitchingUp_;
+  bool pitchingDown_;
+  bool turningLeft_;
+  bool turningRight_;
+  bool rollingLeft_;
+  bool rollingRight_;
   WireModel wireModel_;
 };
 
