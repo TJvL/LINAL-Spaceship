@@ -6,7 +6,7 @@
 #include "../../include/game/WireModel.h"
 #include "../../include/math/Transform.h"
 
-WireModel::WireModel(Mesh mesh, Camera const &camera)
+WireModel::WireModel(Mesh mesh, Mesh const &camera)
     : mesh_(mesh)
     , vertices_(sf::Lines, mesh_.numberOfEdges()*2),
 	camera_{camera}{}
@@ -16,7 +16,7 @@ void WireModel::prepareDraw() {
 }
 
 void WireModel::draw(sf::RenderTarget &target, sf::RenderStates states) const{
-	auto cameraMatrix = Transform::cameraMatrix(camera_);
+	auto cameraMatrix = Transform::cameraMatrix(camera_.origin, camera_.side, camera_.top, camera_.heading);
 	auto projectionMatrix = Transform::perpMatrix(90., 0.75/*4:3*/, 0.1, 1000.);
 
 	auto wm = projectionMatrix * cameraMatrix;
@@ -25,16 +25,15 @@ void WireModel::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
 	std::vector<Vector3> points(mesh_.getPoints());
 
-	auto rotationMatrix = Transform::rotationMatrix(mesh_.heading, mesh_.side, mesh_.top);
+	auto rotationMatrix = Transform::rotationMatrix(mesh_.side, mesh_.top, mesh_.heading);
 	auto scalingMatrix = Transform::scalingMatrix(mesh_.scaling);
 
 
 	for (auto &point : points) {
-		auto n = Vector4{ point.data[0], point.data[1], point.data[2], 1.0 };
+		auto n = toVector4(point);
 		auto translationMatrix = Transform::translationMatrix(mesh_.origin);
-		n = rotationMatrix * n;
-		n = translationMatrix * n;
-		n = wm * n;
+		auto modelMatrix = translationMatrix * rotationMatrix * scalingMatrix;
+		n = projectionMatrix * cameraMatrix * modelMatrix * n;
 
 		point.data[0] = (640 / 2) + (n.data[0] / n.data[3]) * (640 / 2);
 		point.data[1] = (640 / 2) + (n.data[1] / n.data[3]) * (640 / 2);

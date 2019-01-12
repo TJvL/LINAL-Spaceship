@@ -10,12 +10,11 @@
 #include <SFML/Graphics/RenderStates.hpp>
 #include <SFML/Graphics/VertexArray.hpp>
 #include "../math/Mesh.h"
-#include "Camera.h"
 
 // Class is used to translate this domains math data to SFML drawable vertices.
 class WireModel : public sf::Drawable {
  public:
-  WireModel(Mesh mesh, Camera const &camera);
+  WireModel(Mesh mesh, Mesh const &camera);
 
   void prepareDraw();
 
@@ -24,7 +23,7 @@ class WireModel : public sf::Drawable {
   Mesh mesh_;
  private:
   mutable sf::VertexArray vertices_;
-  Camera const &camera_;
+  Mesh const &camera_;
 };
 
 #endif //LINAL_SPACESHIP_WIREMODEL_H
