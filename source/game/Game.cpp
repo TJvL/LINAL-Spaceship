@@ -8,7 +8,7 @@
 #include "../../include/game/Game.h"
 
 Game::Game()
-	: currentRenderState_(sf::RenderStates::Default), camera_{} {
+    : currentRenderState_(sf::RenderStates::Default), camera_{} {
   updatables_.push_back(createSpaceship(camera_));
   //updatables_.push_back(createShootingTarget(camera_));
 }
@@ -33,7 +33,7 @@ void Game::runLoop(sf::RenderWindow &window, std::function<void(LoopControl &, d
 
     if (control.quit) {
       running = false;
-    } else {
+    } else if (toSeconds(deltaTime) > 0) {
       window.clear(sf::Color::White);
       for (auto &updatable : updatables_) {
         window.draw(updatable->update(deltaTime, control.keyboard), currentRenderState_);
