@@ -14,10 +14,10 @@ find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
 
 add_executable(linal_spaceship
         source/Application.cpp
-        source/game/Camera.cpp
         source/game/Game.cpp
         source/game/WireModel.cpp
         source/math/Mesh.cpp
+		source/math/Matrix.cpp
         source/game/Spaceship.cpp
         source/game/ShootingTarget.cpp
         source/game/Bullet.cpp

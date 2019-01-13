@@ -11,11 +11,11 @@
 class Mesh {
  public:
   explicit Mesh(std::vector<Vector3> points, std::vector<std::pair<size_t, size_t>> edges);
-  Vector3 origin{0., 0., 100.};
+  Vector3 origin{0., 0., 0.};
 
-  Vector3 heading{1., 0., 0.};
-  Vector3 side{0., 1., 0.};
-  Vector3 top{0., 0., 1.};
+  Vector3 side{1., 0., 0.};
+  Vector3 top{0., 1., 0.};
+  Vector3 heading{0., 0., 1.};
 
   Vector3 scaling{1., 1., 1.};
 

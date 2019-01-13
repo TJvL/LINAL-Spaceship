@@ -14,7 +14,6 @@
 #include "Spaceship.h"
 #include "ShootingTarget.h"
 #include "Bullet.h"
-#include "Camera.h"
 
 class Game {
  public:
@@ -22,10 +21,15 @@ class Game {
   ~Game();
 
   void runLoop(sf::RenderWindow &window, std::function<void(LoopControl&, deltaTime&)> function);
+  void addToAdd(Updatable *add) {to_add_updatables_.push_back(add);};
+  void addToRemove(Updatable *remove) {to_remove_updatables_.push_back(remove);};
+  Mesh const *getCamera()  const {return &camera_;}
  private:
   sf::RenderStates currentRenderState_;
   std::vector<Updatable*> updatables_;
-  Camera camera_;
+  std::vector<Updatable*> to_add_updatables_;
+  std::vector<Updatable*> to_remove_updatables_;
+  Mesh camera_;
 };
 
 #endif //LINAL_SPACESHIP_GAME_H

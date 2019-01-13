@@ -2,12 +2,12 @@
 // Created by thomas on 20-12-18.
 //
 
-#include "../../include/math/Transform.h"
 #include "../../include/math/Matrix.h"
+#include "../../include/math/Transform.h"
 
 
 void Transform::translate(Vector3 &origin, Vector3 const &side, Vector3 const &top, Vector3 const &heading, Vector3 direction) {
-	origin += rotationMatrix(side, top, heading) * translationMatrix(direction);
+	origin = fromVector4(translationMatrix(origin) * rotationMatrix(side, top, heading) * toVector4(direction));
 }
 
 void Transform::rotate(Vector3 &side, Vector3 &top, Vector3 &heading, Vector3 size) {

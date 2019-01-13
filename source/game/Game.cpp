@@ -8,9 +8,13 @@
 #include "../../include/game/Game.h"
 
 Game::Game()
-    : currentRenderState_(sf::RenderStates::Default), camera_{} {
-  updatables_.push_back(createSpaceship(camera_));
-  //updatables_.push_back(createShootingTarget(camera_));
+	: currentRenderState_(sf::RenderStates::Default), camera_{{}, {}} {
+  updatables_.push_back(createSpaceship(this));
+  //updatables_.push_back(createShootingTarget(this));
+  camera_.side = {1., 0., 0.};
+  camera_.top = {0., 1., 0.};
+  camera_.heading = {0., 0., 1.};
+  camera_.origin = {0., 0., 0.};
 }
 
 Game::~Game() {
@@ -22,23 +26,36 @@ Game::~Game() {
 void Game::runLoop(sf::RenderWindow &window, std::function<void(LoopControl &, deltaTime &)> function) {
   bool running = true;
   timePoint previousTime = now();
+  auto deltaTime = previousTime - previousTime;
+  LoopControl control{};
   while (running) {
     timePoint currentTime = now();
-    deltaTime deltaTime = currentTime - previousTime;
+    deltaTime += currentTime - previousTime;
     previousTime = currentTime;
-    LoopControl control{};
 
     // Execute input capture function.
     function(control, deltaTime);
 
+
     if (control.quit) {
       running = false;
-    } else if (toSeconds(deltaTime) > 0) {
-      window.clear(sf::Color::White);
-      for (auto &updatable : updatables_) {
-        window.draw(updatable->update(deltaTime, control.keyboard), currentRenderState_);
-      }
+    } else if (toSeconds(deltaTime) > (1.f/60.f)) {
+      window.clear();
+	  for (auto &updatable : updatables_) {
+		  window.draw(updatable->update(deltaTime, control.keyboard), currentRenderState_);
+	  }
       window.display();
+	  control.keyboard.clear();
+	  deltaTime = fromSeconds(0.f);
     }
+
+	updatables_.erase(std::remove_if(updatables_.begin(), updatables_.end(), [&](auto *u) {
+		return std::find(to_remove_updatables_.begin(), to_remove_updatables_.end(), u) != to_remove_updatables_.end();
+	}), updatables_.end());
+	to_remove_updatables_.end();
+	std::for_each(to_add_updatables_.begin(), to_add_updatables_.end(), [&](auto *u) {
+		updatables_.push_back(u);
+	});
+	to_add_updatables_.clear();
   }
 }

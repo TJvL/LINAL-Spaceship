@@ -7,10 +7,12 @@
 
 #include <memory>
 #include "Updatable.h"
-#include "Camera.h"
+#include "../math/Mesh.h"
 
-Updatable *createSpaceship(Camera const& camera);
-Updatable *createShootingTarget(Camera const& camera);
-Updatable *createBullet(Camera const& camera);
+class Game;
+
+Updatable *createSpaceship(Game *game);
+Updatable *createShootingTarget(Game *game);
+Updatable *createBullet(Game *game, Vector3 origin, Vector3 side, Vector3 top, Vector3 heading);
 
 #endif //LINAL_SPACESHIP_MODELFACTORY_H

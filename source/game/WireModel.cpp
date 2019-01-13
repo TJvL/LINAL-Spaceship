@@ -4,6 +4,7 @@
 
 #include <vector>
 #include "../../include/game/WireModel.h"
+#include "../../include/math/Matrix.h"
 #include "../../include/math/Transform.h"
 
 WireModel::WireModel(Mesh mesh, Mesh const &camera)
@@ -17,7 +18,7 @@ void WireModel::prepareDraw() {
 
 void WireModel::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 	auto cameraMatrix = Transform::cameraMatrix(camera_.origin, camera_.side, camera_.top, camera_.heading);
-	auto projectionMatrix = Transform::perpMatrix(90., 0.75/*4:3*/, 0.1, 1000.);
+	auto projectionMatrix = Transform::perpMatrix(90., 800.f/600.f/*4:3*/, 10, 1000.);
 
 	auto wm = projectionMatrix * cameraMatrix;
 
@@ -35,8 +36,8 @@ void WireModel::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 		auto modelMatrix = translationMatrix * rotationMatrix * scalingMatrix;
 		n = projectionMatrix * cameraMatrix * modelMatrix * n;
 
-		point.data[0] = (640 / 2) + (n.data[0] / n.data[3]) * (640 / 2);
-		point.data[1] = (640 / 2) + (n.data[1] / n.data[3]) * (640 / 2);
+		point.data[0] = (800 / 2) + (n.data[0] / n.data[3]) * (800 / 2);
+		point.data[1] = (600 / 2) + (n.data[1] / n.data[3]) * (600 / 2);
 		point.data[2] = -n.data[2];
 	}
 

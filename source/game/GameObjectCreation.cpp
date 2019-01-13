@@ -10,71 +10,55 @@
 #include "../../include/game/ShootingTarget.h"
 #include "../../include/game/Bullet.h"
 #include "../../include/game/GameObjectCreation.h"
+#include "../../include/game/Game.h"
 
-Updatable *createSpaceship(Camera const& camera) {
-  std::vector<Vector3> points{
-      // Body.
-      Vector3{5., 0., 5.},
-      Vector3{5., 0., -5.},
-      Vector3{-5., 0., -5.},
-      Vector3{-5., 0., 5.},
-      Vector3{5., 10., 5.},
-      Vector3{5., 10., -5.},
-      Vector3{-5., 10., -5.},
-      Vector3{-5., 10., 5.},
-      // Tail.
-      Vector3{0., 5., 10.},
-      // Nose.
-      Vector3{0., 0., -15.},
-      // Right wing.
-      Vector3{10., 0., 0.},
-      // Left wing.
-      Vector3{-10., 0., 0.}
-  };
+Updatable *createSpaceship(Game *game) {
+		auto points = std::vector<Vector3>{
+		{    0.,     0., -14.},
+		{-9.899, -9.899, -14.},
+		{ 9.899, -9.899, -14.},
+		{-9.899,  9.899, -14.},
+		{ 9.899,  9.899, -14.},
+		{  -14.,     0.,   0.},
+		{   14.,     0.,   0.},
+		{    0.,   -14.,   0.},
+		{    0.,    14.,   0.},
+		{    0.,     0.,  42.},
+		{   -7.,    -7.,   0.},
+		{    7.,    -7.,   0.},
+		{   -7.,     7.,   0.},
+		{    7.,     7.,   0.}};
 
-  std::vector<std::pair<size_t, size_t>> lines{
-      // Body.
-      std::make_pair<size_t, size_t>(0, 1),
-      std::make_pair<size_t, size_t>(1, 2),
-      std::make_pair<size_t, size_t>(2, 3),
-      std::make_pair<size_t, size_t>(3, 0),
-      std::make_pair<size_t, size_t>(4, 5),
-      std::make_pair<size_t, size_t>(5, 6),
-      std::make_pair<size_t, size_t>(6, 7),
-      std::make_pair<size_t, size_t>(7, 4),
-      std::make_pair<size_t, size_t>(0, 4),
-      std::make_pair<size_t, size_t>(1, 5),
-      std::make_pair<size_t, size_t>(2, 6),
-      std::make_pair<size_t, size_t>(3, 7),
-      // Tail.
-      std::make_pair<size_t, size_t>(2, 8),
-      std::make_pair<size_t, size_t>(3, 8),
-      std::make_pair<size_t, size_t>(5, 8),
-      std::make_pair<size_t, size_t>(6, 8),
-      // Nose.
-      std::make_pair<size_t, size_t>(0, 9),
-      std::make_pair<size_t, size_t>(3, 9),
-      std::make_pair<size_t, size_t>(4, 9),
-      std::make_pair<size_t, size_t>(7, 9),
-      // Right wing.
-      std::make_pair<size_t, size_t>(0, 10),
-      std::make_pair<size_t, size_t>(1, 10),
-      std::make_pair<size_t, size_t>(5, 10),
-      std::make_pair<size_t, size_t>(6, 10),
-      // Left Wing.
-      std::make_pair<size_t, size_t>(3, 11),
-      std::make_pair<size_t, size_t>(4, 11),
-      std::make_pair<size_t, size_t>(7, 11),
-      std::make_pair<size_t, size_t>(8, 11),
-  };
+		std::vector<std::pair<size_t, size_t>> lines{
+		{0,  1},
+		{0,  2},
+		{0,  3},
+		{0,  4},
+		{0,  5},
+		{0,  6},
+		{0,  7},
+		{0,  8},
+		{1, 10},
+		{2, 11},
+		{3, 12},
+		{4, 13},
+		{5,  7},
+		{5,  8},
+		{5,  9},
+		{6,  7},
+		{6,  8},
+		{6,  9},
+		{7,  9},
+		{8,  9}};
 
   Mesh mesh{points, lines};
-  WireModel model{mesh, camera};
+  mesh.origin = {0., 0., -70.};
+  WireModel model{mesh, *game->getCamera()};
 
-  return new Spaceship(model);
+  return new Spaceship(model, game);
 }
 
-Updatable *createShootingTarget(Camera const& camera) {
+Updatable *createShootingTarget(Game *game) {
   std::vector<Vector3> points{
       // Front points.
       Vector3{10., 10., 0.},
@@ -127,12 +111,12 @@ Updatable *createShootingTarget(Camera const& camera) {
   };
 
   Mesh mesh{points, lines};
-  WireModel model{mesh, camera };
+  WireModel model{mesh, *game->getCamera()};
 
   return new ShootingTarget(model);
 }
 
-Updatable *createBullet(Camera const& camera) {
+Updatable *createBullet(Game *game, Vector3 origin, Vector3 side, Vector3 top, Vector3 heading) {
   std::vector<Vector3> points{
       Vector3{0., 5., 0.},
       Vector3{2., 0., 0.},
@@ -154,7 +138,11 @@ Updatable *createBullet(Camera const& camera) {
   };
 
   Mesh mesh{points, lines};
-  WireModel model{mesh, camera };
+  mesh.origin = origin;
+  mesh.side = side;
+  mesh.top = top;
+  mesh.heading = heading;
+  WireModel model{mesh, *game->getCamera()};
 
   return new Bullet(model);
 }

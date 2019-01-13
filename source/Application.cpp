@@ -14,6 +14,10 @@ const unsigned int screenHeight = 600;
 Application::Application()
     : window_(sf::RenderWindow{sf::VideoMode{screenWidth, screenHeight}, "Spaceship", sf::Style::Close}) {
   window_.setKeyRepeatEnabled(false);
+  auto view = window_.getDefaultView();
+  auto &size = view.getSize();
+  view.setSize(size.x, -size.y);
+  window_.setView(view);
 }
 
 void Application::run() {

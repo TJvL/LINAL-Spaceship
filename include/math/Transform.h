@@ -6,7 +6,6 @@
 #define LINAL_SPACESHIP_TRANSFORM_H
 
 #include "Matrix.h"
-#include "../game/Camera.h"
 
 class Transform {
 public:
