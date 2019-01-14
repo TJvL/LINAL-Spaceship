@@ -7,7 +7,7 @@
 
 #include "Updatable.h"
 #include "WireModel.h"
-#include "../math/mesh.h"
+#include "../math/Mesh.h"
 
 class Game;
 

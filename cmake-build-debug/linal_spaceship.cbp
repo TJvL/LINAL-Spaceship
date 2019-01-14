@@ -92,9 +92,6 @@
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/game/Bullet.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>
-		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/game/Camera.cpp">
-			<Option target="linal_spaceship"/>
-		</Unit>
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/game/Game.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>
@@ -110,16 +107,13 @@
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/game/WireModel.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>
+		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Matrix.cpp">
+			<Option target="linal_spaceship"/>
+		</Unit>
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Mesh.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Transform.cpp">
-			<Option target="linal_spaceship"/>
-		</Unit>
-		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Vector3.cpp">
-			<Option target="linal_spaceship"/>
-		</Unit>
-		<Unit filename="/home/thomas/Repositories/linal-spaceship/source/math/Vector4.cpp">
 			<Option target="linal_spaceship"/>
 		</Unit>
 		<Unit filename="/home/thomas/Repositories/linal-spaceship/CMakeLists.txt">
