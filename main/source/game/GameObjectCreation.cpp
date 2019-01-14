@@ -146,3 +146,12 @@ Updatable *createBullet(Game *game, Vector3 origin, Vector3 side, Vector3 top, V
 
   return new Bullet(model);
 }
+
+Camera *createCamera() {
+	Mesh camera{{}, {}};
+	camera.side = {1., 0., 0.};
+	camera.top = {0., 1., 0.};
+	camera.heading = {0., 0., 1.};
+	camera.origin = {0., 0., 0.};
+	return new Camera(camera);
+}

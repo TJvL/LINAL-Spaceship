@@ -8,13 +8,10 @@
 #include "../../include/game/Game.h"
 
 Game::Game()
-	: currentRenderState_(sf::RenderStates::Default), camera_{{}, {}} {
+	: currentRenderState_(sf::RenderStates::Default), camera_(createCamera()) {
   updatables_.push_back(createSpaceship(this));
   //updatables_.push_back(createShootingTarget(this));
-  camera_.side = {1., 0., 0.};
-  camera_.top = {0., 1., 0.};
-  camera_.heading = {0., 0., 1.};
-  camera_.origin = {0., 0., 0.};
+  updatables_.push_back(camera_);
 }
 
 Game::~Game() {
