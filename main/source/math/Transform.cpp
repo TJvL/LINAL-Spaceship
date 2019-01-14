@@ -101,14 +101,14 @@ Matrix4 Transform::rotationMatrix(Vector3 const &rotation) {
 }
 
 Matrix4 Transform::rotationMatrix(Vector3 const &side, Vector3 const &top, Vector3 const &heading) {
-	Vector3 hn = heading.normalize();
 	Vector3 sn = side.normalize();
 	Vector3 tn = top.normalize();
+	Vector3 hn = heading.normalize();
 
 	return Matrix4{
-		hn.data[0], sn.data[0], tn.data[0], 0.,
-		hn.data[1], sn.data[1], tn.data[1], 0.,
-		hn.data[2], sn.data[2], tn.data[2], 0.,
+		sn.data[0], tn.data[0], hn.data[0], 0.,
+		sn.data[1], tn.data[1], hn.data[1], 0.,
+		sn.data[2], tn.data[2], hn.data[2], 0.,
 		0., 0., 0., 1.
 	};
 }
