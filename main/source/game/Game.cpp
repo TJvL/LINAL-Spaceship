@@ -46,10 +46,14 @@ void Game::runLoop(sf::RenderWindow &window, std::function<void(LoopControl &, d
 	  deltaTime = fromSeconds(0.f);
     }
 
-	updatables_.erase(std::remove_if(updatables_.begin(), updatables_.end(), [&](auto *u) {
-		return std::find(to_remove_updatables_.begin(), to_remove_updatables_.end(), u) != to_remove_updatables_.end();
-	}), updatables_.end());
-	to_remove_updatables_.end();
+	auto firstToRemove = std::stable_partition(updatables_.begin(), updatables_.end(), [&](auto *u) {
+		return std::find(to_remove_updatables_.begin(), to_remove_updatables_.end(), u) == to_remove_updatables_.end();
+	});
+	std::for_each(firstToRemove, updatables_.end(), [](auto *u) {delete u;});
+
+	updatables_.erase(firstToRemove, updatables_.end());
+
+	to_remove_updatables_.clear();
 	std::for_each(to_add_updatables_.begin(), to_add_updatables_.end(), [&](auto *u) {
 		updatables_.push_back(u);
 	});

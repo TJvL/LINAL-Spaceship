@@ -27,10 +27,10 @@ sf::Drawable &Spaceship::update(const deltaTime &deltaTime, const std::map<sf::K
 
   float moveAmount;
   if (movingForwards_) {
-    moveAmount = 10;
+    moveAmount = 1;
 
   } else if (movingBackwards_) {
-    moveAmount = -10;
+    moveAmount = -1;
   } else {
     moveAmount = 0;
   }

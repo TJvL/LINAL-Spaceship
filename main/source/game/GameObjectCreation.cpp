@@ -111,6 +111,7 @@ Updatable *createShootingTarget(Game *game) {
   };
 
   Mesh mesh{points, lines};
+  mesh.origin = {30., 0., -100.};
   WireModel model{mesh, *game->getCamera()};
 
   return new ShootingTarget(model);
@@ -144,7 +145,7 @@ Updatable *createBullet(Game *game, Vector3 origin, Vector3 side, Vector3 top, V
   mesh.heading = heading;
   WireModel model{mesh, *game->getCamera()};
 
-  return new Bullet(model);
+  return new Bullet(model, game);
 }
 
 Camera *createCamera() {

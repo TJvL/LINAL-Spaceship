@@ -22,7 +22,7 @@ class Game {
   ~Game();
 
   void runLoop(sf::RenderWindow &window, std::function<void(LoopControl&, deltaTime&)> function);
-  void addToAdd(Updatable *add) {to_add_updatables_.push_back(add);};
+  void addToAdd(Updatable *add) {if(add != nullptr) to_add_updatables_.push_back(add);};
   void addToRemove(Updatable *remove) {to_remove_updatables_.push_back(remove);};
   Mesh const *getCamera()  const {return &camera_->getCamera();}
  private:
