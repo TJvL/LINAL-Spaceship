@@ -262,21 +262,6 @@ TEST_CASE("Normalizing a 3d vector.", "[Vector3]") {
     // Vector v should have stayed (3,4,5).
     REQUIRE((v.data[0]==3 && v.data[1]==4 && v.data[2]==5));
   }
-
-  SECTION("Normalizing a zero magnitude 3d vector.") {
-
-    // Act
-
-    Vector3 u = w.normalize();
-
-    // Assert
-
-    // Vector u should be (0,0,0).
-    REQUIRE((u.data[0] == 0 && u.data[1] == 0 && u.data[2] == 0));
-
-    // Vector v should have stayed (0,0,0).
-    REQUIRE((w.data[0]==0 && w.data[1]==0 && w.data[2]==0));
-  }
 }
 
 // Vector3 dot product.
