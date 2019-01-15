@@ -56,8 +56,6 @@ void Camera::setMovement(const sf::Keyboard::Key &key, const bool isPressed) {
       if (isPressed) {
         movingForwards_ = true;
         movingBackwards_ = false;
-        movingLeft_ = false;
-        movingRight_ = false;
       } else {
         movingForwards_ = false;
       }
@@ -67,8 +65,6 @@ void Camera::setMovement(const sf::Keyboard::Key &key, const bool isPressed) {
       if (isPressed) {
         movingBackwards_ = true;
         movingForwards_ = false;
-        movingLeft_ = false;
-        movingRight_ = false;
       } else {
         movingBackwards_ = false;
       }
@@ -77,8 +73,6 @@ void Camera::setMovement(const sf::Keyboard::Key &key, const bool isPressed) {
     case sf::Keyboard::Key::Left:
       if (isPressed) {
         movingLeft_ = true;
-        movingForwards_ = false;
-        movingBackwards_ = false;
         movingRight_ = false;
       } else {
         movingLeft_ = false;
@@ -88,9 +82,7 @@ void Camera::setMovement(const sf::Keyboard::Key &key, const bool isPressed) {
     case sf::Keyboard::Key::Right:
       if (isPressed) {
         movingRight_ = true;
-        movingForwards_ = false;
         movingLeft_ = false;
-        movingBackwards_ = false;
       } else {
         movingRight_ = false;
       }
@@ -99,10 +91,10 @@ void Camera::setMovement(const sf::Keyboard::Key &key, const bool isPressed) {
 }
 
 void Camera::moveVertical(Mesh &mesh, float moveAmount) {
-  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {0.f, 0.f, moveAmount});
+  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {0.f, moveAmount, 0.f});
 }
 
 void Camera::moveHorizontal(Mesh &mesh, float moveAmount) {
-  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {0.f, moveAmount, 0.f});
+  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {moveAmount, 0.f, 0.f});
 }
 
