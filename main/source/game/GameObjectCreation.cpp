@@ -52,7 +52,10 @@ Updatable *createSpaceship(Game *game) {
 		{8,  9}};
 
   Mesh mesh{points, lines};
-  mesh.origin = {0., 0., -70.};
+  mesh.origin = {0., 0., 0.};
+  mesh.side = {1., 0., 0.};
+  mesh.top = {0., 1., 0.};
+  mesh.heading = {0., 0., 1.};
   WireModel model{mesh, *game->getCamera()};
 
   return new Spaceship(model, game);
@@ -111,7 +114,7 @@ Updatable *createShootingTarget(Game *game) {
   };
 
   Mesh mesh{points, lines};
-  mesh.origin = {30., 0., -100.};
+  mesh.origin = {30., 0., 0.};
   WireModel model{mesh, *game->getCamera()};
 
   return new ShootingTarget(model);
@@ -153,6 +156,6 @@ Camera *createCamera() {
 	camera.side = {1., 0., 0.};
 	camera.top = {0., 1., 0.};
 	camera.heading = {0., 0., 1.};
-	camera.origin = {0., 0., 0.};
+	camera.origin = {0., 0., 100.};
 	return new Camera(camera);
 }

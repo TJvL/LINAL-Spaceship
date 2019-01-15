@@ -19,10 +19,15 @@ class Camera : public Updatable {
   void setMovement(const sf::Keyboard::Key &key, const bool isPressed);
   void moveVertical(Mesh &mesh, float moveAmount);
   void moveHorizontal(Mesh &mesh, float moveAmount);
+  void rotate(Mesh &mesh, float x, float y, float z);
   bool movingForwards_;
   bool movingBackwards_;
   bool movingLeft_;
   bool movingRight_;
+  bool pitchingUp_;
+  bool pitchingDown_;
+  bool turningLeft_;
+  bool turningRight_;
   Mesh camera_;
   NullDrawable *drawable_;
 };

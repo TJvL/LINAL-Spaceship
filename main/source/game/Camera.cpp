@@ -11,7 +11,11 @@ Camera::Camera(Mesh camera)
       movingForwards_(false),
       movingBackwards_(false),
       movingLeft_(false),
-      movingRight_(false) {}
+      movingRight_(false),
+      pitchingUp_(false),
+      pitchingDown_(false),
+      turningLeft_(false),
+      turningRight_(false) {}
 
 Camera::~Camera() {
   delete drawable_;
@@ -44,6 +48,27 @@ sf::Drawable &Camera::update(const deltaTime &deltaTime, const std::map<sf::Keyb
     moveHorizontalAmount = 0;
   }
 
+  float x;
+  if (pitchingUp_) {
+    x = 1.f;
+  } else if (pitchingDown_) {
+    x = -1.f;
+  } else {
+    x = 0.f;
+  }
+
+  float y;
+  if (turningLeft_) {
+    y = 1.f;
+  } else if (turningRight_) {
+    y = -1.f;
+  } else {
+    y = 0.f;
+  }
+
+  float z = 0.f;
+
+  rotate(camera_, x, y, z);
   moveVertical(camera_, moveVerticalAmount);
   moveHorizontal(camera_, moveHorizontalAmount);
 
@@ -87,7 +112,47 @@ void Camera::setMovement(const sf::Keyboard::Key &key, const bool isPressed) {
         movingRight_ = false;
       }
       break;
+
+    case sf::Keyboard::Key::I:
+      if (isPressed) {
+        pitchingDown_ = true;
+        pitchingUp_ = false;
+      } else {
+        pitchingDown_ = false;
+      }
+      break;
+
+    case sf::Keyboard::Key::K:
+      if (isPressed) {
+        pitchingUp_ = true;
+        pitchingDown_ = false;
+      } else {
+        pitchingUp_ = false;
+      }
+      break;
+
+    case sf::Keyboard::Key::J:
+      if (isPressed) {
+        turningLeft_ = true;
+        turningRight_ = false;
+      } else {
+        turningLeft_ = false;
+      }
+      break;
+
+    case sf::Keyboard::Key::L:
+      if (isPressed) {
+        turningRight_ = true;
+        turningLeft_ = false;
+      } else {
+        turningRight_ = false;
+      }
+      break;
   }
+}
+
+void Camera::rotate(Mesh &mesh, float x, float y, float z) {
+  Transform::rotate(mesh.side, mesh.top, mesh.heading, {x, y, z});
 }
 
 void Camera::moveVertical(Mesh &mesh, float moveAmount) {

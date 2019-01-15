@@ -37,8 +37,7 @@ sf::Drawable &Spaceship::update(const deltaTime &deltaTime, const std::map<sf::K
 
   float x;
   if (pitchingUp_) {
-	  x = 1.;
-
+	  x = 1.f;
   }
   else if (pitchingDown_) {
 	  x = -1.f;
@@ -46,10 +45,10 @@ sf::Drawable &Spaceship::update(const deltaTime &deltaTime, const std::map<sf::K
   else {
 	  x = 0.f;
   }
+
   float y;
   if (turningLeft_) {
-	  y = 1.;
-
+	  y = 1.f;
   }
   else if (turningRight_) {
 	  y = -1.f;
@@ -60,8 +59,7 @@ sf::Drawable &Spaceship::update(const deltaTime &deltaTime, const std::map<sf::K
 
   float z;
   if (rollingLeft_) {
-	  z = 1.;
-
+	  z = 1.f;
   }
   else if (rollingRight_) {
 	  z = -1.f;
