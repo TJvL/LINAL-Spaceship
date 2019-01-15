@@ -10,7 +10,7 @@
 Game::Game()
 	: currentRenderState_(sf::RenderStates::Default), camera_(createCamera()) {
   updatables_.push_back(createSpaceship(this));
-  //updatables_.push_back(createShootingTarget(this));
+  updatables_.push_back(createShootingTarget(this));
   updatables_.push_back(camera_);
 }
 

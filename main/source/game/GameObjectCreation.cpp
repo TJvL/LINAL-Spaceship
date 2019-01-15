@@ -61,7 +61,7 @@ Updatable *createSpaceship(Game *game) {
 Updatable *createShootingTarget(Game *game) {
   std::vector<Vector3> points{
       // Front points.
-      Vector3{10., 10., 0.},
+      Vector3{0., 10., 0.},
       Vector3{7.5, 7.5, 0.},
       Vector3{10., 0., 0.},
       Vector3{7.5, -7.5f, 0.},
@@ -70,14 +70,14 @@ Updatable *createShootingTarget(Game *game) {
       Vector3{-10., 0., 0.},
       Vector3{-7.5f, 7.5f, 0.},
       // Back points.
-      Vector3{10., 10., 2.5},
+      Vector3{0., 10., 2.5},
       Vector3{7.5, 7.5, 2.5},
       Vector3{10., 0., 2.5},
       Vector3{7.5, -7.5f, 2.5},
       Vector3{0., -10., 2.5},
       Vector3{-7.5f, -7.5f, 2.5},
       Vector3{-10., 0., 2.5},
-      Vector3{-7.5f, 7.5f, 2.5},
+      Vector3{-7.5f, 7.5f, 2.5}
   };
 
   std::vector<std::pair<size_t, size_t>> lines{
