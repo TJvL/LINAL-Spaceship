@@ -13,43 +13,43 @@
 #include "../../include/game/Game.h"
 
 Updatable *createSpaceship(Game *game) {
-		auto points = std::vector<Vector3>{
-		{    0.,     0., -14.},
-		{-9.899, -9.899, -14.},
-		{ 9.899, -9.899, -14.},
-		{-9.899,  9.899, -14.},
-		{ 9.899,  9.899, -14.},
-		{  -14.,     0.,   0.},
-		{   14.,     0.,   0.},
-		{    0.,   -14.,   0.},
-		{    0.,    14.,   0.},
-		{    0.,     0.,  42.},
-		{   -7.,    -7.,   0.},
-		{    7.,    -7.,   0.},
-		{   -7.,     7.,   0.},
-		{    7.,     7.,   0.}};
+  auto points = std::vector<Vector3>{
+      {0., 0., -14.},
+      {-9.899, -9.899, -14.},
+      {9.899, -9.899, -14.},
+      {-9.899, 9.899, -14.},
+      {9.899, 9.899, -14.},
+      {-14., 0., 0.},
+      {14., 0., 0.},
+      {0., -14., 0.},
+      {0., 14., 0.},
+      {0., 0., 42.},
+      {-7., -7., 0.},
+      {7., -7., 0.},
+      {-7., 7., 0.},
+      {7., 7., 0.}};
 
-		std::vector<std::pair<size_t, size_t>> lines{
-		{0,  1},
-		{0,  2},
-		{0,  3},
-		{0,  4},
-		{0,  5},
-		{0,  6},
-		{0,  7},
-		{0,  8},
-		{1, 10},
-		{2, 11},
-		{3, 12},
-		{4, 13},
-		{5,  7},
-		{5,  8},
-		{5,  9},
-		{6,  7},
-		{6,  8},
-		{6,  9},
-		{7,  9},
-		{8,  9}};
+  std::vector<std::pair<size_t, size_t>> lines{
+      {0, 1},
+      {0, 2},
+      {0, 3},
+      {0, 4},
+      {0, 5},
+      {0, 6},
+      {0, 7},
+      {0, 8},
+      {1, 10},
+      {2, 11},
+      {3, 12},
+      {4, 13},
+      {5, 7},
+      {5, 8},
+      {5, 9},
+      {6, 7},
+      {6, 8},
+      {6, 9},
+      {7, 9},
+      {8, 9}};
 
   Mesh mesh{points, lines};
   mesh.origin = {0., 0., 0.};
@@ -114,7 +114,7 @@ Updatable *createShootingTarget(Game *game) {
   };
 
   Mesh mesh{points, lines};
-  mesh.origin = {30., 0., 0.};
+  mesh.origin = {0., 0., 100.};
   WireModel model{mesh, *game->getCamera()};
 
   return new ShootingTarget(model);
@@ -152,10 +152,10 @@ Updatable *createBullet(Game *game, Vector3 origin, Vector3 side, Vector3 top, V
 }
 
 Camera *createCamera() {
-	Mesh camera{{}, {}};
-	camera.side = {1., 0., 0.};
-	camera.top = {0., 1., 0.};
-	camera.heading = {0., 0., 1.};
-	camera.origin = {0., 0., 100.};
-	return new Camera(camera);
+  Mesh camera{{}, {}};
+  camera.side = {-1., 0., 0.};
+  camera.top = {0., -1., 0.};
+  camera.heading = {0., 0., -1.};
+  camera.origin = {0., 100., 40.};
+  return new Camera(camera);
 }
