@@ -165,6 +165,7 @@ class Matrix {
   Matrix<rows, cols, T> normalize() const {
     Matrix<rows, cols, T> matrix = *this;
     T len = length();
+	if(len == 0) {return matrix;}
     std::for_each(matrix.data.begin(), matrix.data.end(), [&len](T &scal) mutable { scal /= len; });
     return matrix;
   }
@@ -385,8 +386,17 @@ class Matrix<1, 1, T> {
     data.at(n) = val;
   }
 
-  T length() {
+  T length() const {
     return data;
+  }
+
+  Matrix<cols, rows, T> transpose() const {
+	  return *this;
+  }
+
+  Matrix<rows, cols, T> normalize() const {
+	  if (length() == 0) { return *this; }
+	  return Matrix<rows, cols, T>{data / data};
   }
 };
 

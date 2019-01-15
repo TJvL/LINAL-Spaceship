@@ -30,43 +30,43 @@ sf::Drawable &Camera::update(const deltaTime &deltaTime, const std::map<sf::Keyb
     setMovement(key, isPressed);
   }
 
-  float moveVerticalAmount;
+  double moveVerticalAmount;
   if (movingForwards_) {
-    moveVerticalAmount = 5;
+    moveVerticalAmount = 5.;
   } else if (movingBackwards_) {
-    moveVerticalAmount = -5;
+    moveVerticalAmount = -5.;
   } else {
     moveVerticalAmount = 0;
   }
 
-  float moveHorizontalAmount;
+  double moveHorizontalAmount;
   if (movingLeft_) {
-    moveHorizontalAmount = 5;
+    moveHorizontalAmount = -5.;
   } else if (movingRight_) {
-    moveHorizontalAmount = -5;
+    moveHorizontalAmount = 5.;
   } else {
     moveHorizontalAmount = 0;
   }
 
-  float x;
+  double x;
   if (pitchingUp_) {
-    x = 1.f;
+    x = 1.;
   } else if (pitchingDown_) {
-    x = -1.f;
+    x = -1.;
   } else {
-    x = 0.f;
+    x = 0.;
   }
 
-  float y;
+  double y;
   if (turningLeft_) {
-    y = 1.f;
+    y = 1.;
   } else if (turningRight_) {
-    y = -1.f;
+    y = -1.;
   } else {
-    y = 0.f;
+    y = 0.;
   }
 
-  float z = 0.f;
+  double z = 0.;
 
   rotate(camera_, x, y, z);
   moveVertical(camera_, moveVerticalAmount);
@@ -151,15 +151,15 @@ void Camera::setMovement(const sf::Keyboard::Key &key, const bool isPressed) {
   }
 }
 
-void Camera::rotate(Mesh &mesh, float x, float y, float z) {
+void Camera::rotate(Mesh &mesh, double x, double y, double z) {
   Transform::rotate(mesh.side, mesh.top, mesh.heading, {x, y, z});
 }
 
-void Camera::moveVertical(Mesh &mesh, float moveAmount) {
-  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {0.f, moveAmount, 0.f});
+void Camera::moveVertical(Mesh &mesh, double moveAmount) {
+  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {0., moveAmount, 0.});
 }
 
-void Camera::moveHorizontal(Mesh &mesh, float moveAmount) {
-  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {moveAmount, 0.f, 0.f});
+void Camera::moveHorizontal(Mesh &mesh, double moveAmount) {
+  Transform::translate(mesh.origin, mesh.side, mesh.top, mesh.heading, {moveAmount, 0., 0.});
 }
 

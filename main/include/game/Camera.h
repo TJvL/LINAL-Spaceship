@@ -17,9 +17,9 @@ class Camera : public Updatable {
   sf::Drawable &update(const deltaTime &deltaTime, const std::map<sf::Keyboard::Key, bool> &keyboard) override;
  private:
   void setMovement(const sf::Keyboard::Key &key, const bool isPressed);
-  void moveVertical(Mesh &mesh, float moveAmount);
-  void moveHorizontal(Mesh &mesh, float moveAmount);
-  void rotate(Mesh &mesh, float x, float y, float z);
+  void moveVertical(Mesh &mesh, double moveAmount);
+  void moveHorizontal(Mesh &mesh, double moveAmount);
+  void rotate(Mesh &mesh, double x, double y, double z);
   bool movingForwards_;
   bool movingBackwards_;
   bool movingLeft_;
