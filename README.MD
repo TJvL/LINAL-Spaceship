@@ -1,22 +1,22 @@
-Controls Ship:\n
-\n
-Left Shift = Schip vooruit.\n
-Left Control = Schip achteruit.\n
-W = Schip neus omhoog.\n
-S = Schip neus omlaag.\n
-A = Schip bocht naar links.\n
-D = Schip bocht naar rechts.\n
-Q = Schip naar links rollen.\n
-E = Schip naar rechts rollen.\n
-Space = Kogel schieten.\n
-\n
-Controls camera:\n
-\n
-Up = Camera naar voren bewegen.\n
-Down = Camera naar achteren bewegen.\n
-Left = Camera naar links bewegen.\n
-Right = Camera naar rechts bewegen.\n
-I = Camara omhoog kijken.\n
-K = Camera omlaag kijken.\n
-J = Camera naar links kijken.\n
-L = Camera naar rechts kijken.\n
+Controls Ship:<br />
+<br />
+Left Shift = Schip vooruit.<br />
+Left Control = Schip achteruit.<br />
+W = Schip neus omhoog.<br />
+S = Schip neus omlaag.<br />
+A = Schip bocht naar links.<br />
+D = Schip bocht naar rechts.<br />
+Q = Schip naar links rollen.<br />
+E = Schip naar rechts rollen.<br />
+Space = Kogel schieten.<br />
+<br />
+Controls camera:<br />
+<br />
+Up = Camera naar voren bewegen.<br />
+Down = Camera naar achteren bewegen.<br />
+Left = Camera naar links bewegen.<br />
+Right = Camera naar rechts bewegen.<br />
+I = Camara omhoog kijken.<br />
+K = Camera omlaag kijken.<br />
+J = Camera naar links kijken.<br />
+L = Camera naar rechts kijken.<br />
